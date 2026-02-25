@@ -1,4 +1,3 @@
-# london-tube-network
 # 🚇 London Tube Routing Engine
 A Python routing engine for the London Underground that computes optimal travel paths between stations using graph algorithms.
 Supports Dijkstra and A* search, with transfer-aware routing and detailed journey outputs.
@@ -14,6 +13,7 @@ total travel time
 number of transfers
 
 ## 🗂 Project Structure
+```text
 london-tube-network/
 ├── src/
 │   └── tube_router/
@@ -27,6 +27,7 @@ london-tube-network/
 ├── requirements.txt
 ├── pytest.ini
 └── README.md
+```
 
 ## 🚀 Installation
 git clone https://github.com/xeniaodintsova/london-tube-network.git
@@ -34,7 +35,9 @@ cd london-tube-network
 pip install -r requirements.txt
 
 ## 🧪 Running Tests
-pytest -q
+```bash
+pip install -r requirements.txt
+```
 
 Tests cover:
 correct shortest paths
@@ -43,15 +46,19 @@ transfer counting
 A* vs Dijkstra equivalence 
 
 ## 🧭 Usage
-PYTHONPATH=src python -m tube_router.cli "Covent Garden" "Green Park"
+```bash
+PYTHONPATH=src python -m tube_router.cli "South Kensington" "Euston Square"
+```
 
 ### Options
+```bash
 --algo dijkstra|astar
 --transfer-penalty <int>
 --show-stats
 --heuristic-max-kmph <float>
+```
 
 ### Example
-python -m tube_router.cli "Stockwell" "Ealing Broadway" --algo astar --show-stats
-
-router
+```bash
+python -m tube_router.cli "St. John's Wood" "Kentish Town" --algo astar --show-stats
+```
